@@ -12,12 +12,13 @@ def view_expenses():
     with open(FILE_PATH, mode="r") as file:
         reader = csv.reader(file)
 
-        print("\n{:<15} {:<15} {:<10} {:<25}".format(
-            "Date", "Category", "Amount", "Description"))
-        print("-" * 70)
+        next(reader)  # Skip header
 
-        next(reader)  # Skip the header row
+        print("\n" + "=" * 80)
+        print(f"{'ID':<5}{'Date':<15}{'Category':<15}{'Amount':<12}{'Description'}")
+        print("=" * 80)
 
-        for row in reader:
-            print("{:<15} {:<15} {:<10} {:<25}".format(
-                row[0], row[1], row[2], row[3]))
+        for index, row in enumerate(reader, start=1):
+            print(f"{index:<5}{row[0]:<15}{row[1]:<15}{row[2]:<12}{row[3]}")
+
+        print("=" * 80)

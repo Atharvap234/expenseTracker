@@ -1,6 +1,6 @@
-from ui.menu import show_menu
-from models.expense import Expense
-from services.file_handler import save_expense, view_expenses
+from src.ui.menu import show_menu
+from src.models.expense import Expense
+from src.services.file_handler import save_expense, view_expenses
 
 
 while True:
