@@ -1,5 +1,6 @@
 from src.ui.menu import show_menu
 from src.models.expense import Expense
+from src.services.analytics import get_total_expense
 from src.services.file_handler import (
     save_expense,
     view_expenses,
@@ -99,10 +100,14 @@ while True:
 
     elif choice == "5":
 
-        print("Thank You!")
+        total = get_total_expense()
 
+        print(f"\nTotal Expense : ₹{total}")
+
+    elif choice == "6":
+
+        print("\nThank You!")
         break
-
     else:
 
         print("Invalid Choice")

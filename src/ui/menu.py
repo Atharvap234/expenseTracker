@@ -4,4 +4,5 @@ def show_menu():
     print("2. View Expenses")
     print("3. Delete Expense")
     print("4. Update Expense")
-    print("5. Exit")
+    print("5. Total Expense") 
+    print("6. Exit")
